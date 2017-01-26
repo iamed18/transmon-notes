@@ -1,0 +1,15 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage[europeanresistors,americaninductors]{circuitikz}
+\begin{document}
+
+\begin{circuitikz}[scale=1]
+
+\draw ( 0, 0) [short, *-] node[anchor=south] {$V/\dot{\delta}$} to (1,0);
+\draw (1,0) to [capacitor, l=$C/E_C$] (1,-1)
+to (0.5,-1) node[ground] {}
+to (0,-1)
+to [barrier, l=$I_0/E_J$] (0,0)
+
+\end{circuitikz}
+\end{document}
