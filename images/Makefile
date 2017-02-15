@@ -1,6 +1,8 @@
 # Makefile to create separate PNG image files for all
 #     TEX files in the present directory. The clean
-#     command will remove
+#     command will remove all TeX remnants including
+#     the output PDF (change the flag from -CA to -c
+#     if you want to keep the PDFs).
 
 TEX_FILES := $(wildcard *.tex)
 PDF_FILES := $(TEX_FILES:.tex=.pdf)
@@ -20,3 +22,4 @@ $(PDF_FILES):
 
 clean:
 	latexmk -CA
+    # latexmk -c
